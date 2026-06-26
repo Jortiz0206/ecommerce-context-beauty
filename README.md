@@ -1,57 +1,36 @@
-# Clase: Eventos y useState en React
+# 🌸 Joha Beauty Spa — E-commerce con Estado Global (React & Context API)
 
-Este proyecto contiene el desarrollo paso a paso de los ejercicios, talleres y proyectos prácticos de la **Clase 3: Eventos y useState en React**. La solución ha sido modularizada por carpetas independientes para mantener un código limpio, legible y profesional.
+¡Bienvenido al repositorio de **Glow & Grace**! Este proyecto es una aplicación web de comercio electrónico enfocada en productos de belleza y cuidado personal. Fue desarrollado en **React** implementando un sistema de **Estado Global** utilizando exclusivamente la herramienta nativa **Context API**, permitiendo una comunicación limpia, eficiente y desacoplada entre componentes.
+
+---
+
+## 🚀 Características Principales
+
+1. **Doble Contexto Global (Separación de Responsabilidades):**
+   * 👤 **UserContext:** Gestiona el estado de autenticación de la sesión del usuario (Inicio/Cierre de sesión dinámico).
+   * 🛒 **CartContext:** Controla de manera reactiva el flujo del carrito de compras (agregar productos, sumar cantidades de forma automática, eliminar artículos individuales y vaciar el carrito).
+2. **Arquitectura basada en Componentes Reutilizables:** Diseñado bajo estándares de orden arquitectónico modular.
+3. **Interfaz e Identidad de Marca Estética:** Diseño visual minimalista, limpio ("soft & clean") con colores suaves adaptados al ámbito de la estética. Además, integra la identidad corporativa mediante un logotipo personalizado en la barra de navegación.
+
+---
 
 ## 📁 Estructura del Proyecto
 
-El código está organizado dentro de la carpeta `src/Components/` de la siguiente manera:
+El código fuente dentro de la carpeta `src/` está organizado de la siguiente manera para garantizar escalabilidad:
 
 ```text
 src/
-├── Components/
-│   ├── 01-EventosBasicos/
-│   │   └── EventosBasicos.jsx       # Eventos onClick, onChange, onSubmit y onKeyDown
-│   ├── 02-Contador/
-│   │   └── Contador.jsx             # useState, reto +10 y cambio de color condicional (Taller 1)
-│   ├── 03-Calculadora/
-│   │   └── Calculadora.jsx          # Inputs controlados y operaciones matemáticas (Taller 2)
-│   ├── 04-TodoList/
-│   │   └── TodoList.jsx             # Proyecto de la clase con arreglos (map y filter)
-│   └── 05-GestionEstudiantes/
-│       └── GestionEstudiantes.jsx   # Tarea de cierre y desafío de búsqueda con filter()
-├── App.jsx                          # Componente principal que unifica las evidencias
-└── main.jsx                         # Punto de entrada de la aplicación React
-```
-
-## 🚀 Cómo Ejecutar el Proyecto Localmente
-
-Sigue estos pasos para correr la aplicación en tu entorno de desarrollo:
-
-### 1. Instalar Dependencias
-
-Instala los paquetes necesarios definidos en el archivo `package.json`:
-
-```bash
-npm install
-```
-
-### 2. Iniciar el Servidor de Desarrollo
-
-Ejecuta el proyecto en modo local:
-
-```bash
-npm run dev
-```
-
-Una vez ejecutado, abre en tu navegador:
-
-```text
-http://localhost:5173/
-```
-
-## 🛠️ Tecnologías Utilizadas
-
-- React (Componentes Funcionales)
-- Vite (Entorno de desarrollo rápido)
-- JavaScript (ES6+)
-- JavaScript (ES6+)
+├── assets/
+│   └── logo.jpg            # Recurso gráfico de la identidad de la tienda
+├── context/
+│   ├── UserContext.jsx     # Proveedor y estado global del Usuario
+│   └── CartContext.jsx     # Proveedor y lógica de negocio del Carrito
+├── components/
+│   ├── Navbar.jsx          # Barra de navegación con datos en tiempo real y Logotipo
+│   ├── ProductList.jsx     # Contenedor y mapeo de la colección de productos
+│   ├── ProductCard.jsx     # Tarjeta atómica para visualización y acción de compra
+│   └── Cart.jsx            # Panel de control de compras y cálculo de totales
+├── pages/
+│   └── Home.jsx            # Vista principal que unifica la experiencia de usuario
+├── App.jsx                 # Componente raíz con la envoltura de los Providers
+└── main.jsx                # Punto de entrada oficial de la aplicación a la DOM
